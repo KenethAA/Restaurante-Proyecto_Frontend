@@ -8,7 +8,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 
@@ -40,8 +40,19 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer'
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { LoginComponent } from './pages/login/login.component';
+import { ApiModule } from './api/api.module';
+import { environment } from 'src/environments/environment';
+import { ApiInterceptor } from './api.interceptor';
+
 
 registerLocaleData(en);
+
+export const API_INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useExisting: forwardRef(() => ApiInterceptor),
+  multi: true
+};
 
 @NgModule({
   declarations: [
@@ -58,6 +69,7 @@ registerLocaleData(en);
     MenuresComponent,
     ProveedoresComponent,
     ReservacionesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -81,9 +93,14 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     NzInputNumberModule,
-    NzResultModule
+    NzResultModule,
+    ApiModule.forRoot({ rootUrl: environment.API}),
+   
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US },
+    ApiInterceptor,
+    API_INTERCEPTOR_PROVIDER
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Franquicias, FranquiciasWithoutID } from '../models/franquicias';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'franquicias';
 
 @Injectable({

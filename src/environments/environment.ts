@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBackend:'http://proyectogrupo6.herokuapp.com.com'
+  API:'http://localhost:3000/'
 };
 
 /*

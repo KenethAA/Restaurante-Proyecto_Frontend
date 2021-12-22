@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginGuardian } from './services/login-guardian.service';
+
 import { ErrorComponent } from './pages/error/error.component';
 
 //Importacion de componentes
@@ -21,12 +21,12 @@ import { ReservacionesComponent } from './pages/reservaciones/reservaciones.comp
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'login', component: LoginComponent },
- // { path: 'menu', component: MenuComponent}
-//  { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
+ //{ path: 'menu', component: MenuComponent}
+// { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
   { 
     path: '',
     component: MenuComponent,
-    canActivate:[LoginGuardian],
+  
     children:[
       {path:'welcome', component:WelcomeComponent},
       {path:'colaboradores',component:ColaboradoresComponent},

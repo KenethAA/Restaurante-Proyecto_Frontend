@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Inventario, InventarioWithoutID } from '../models/inventario';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'inventarios';
 
 @Injectable({

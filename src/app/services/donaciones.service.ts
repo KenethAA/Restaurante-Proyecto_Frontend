@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Donaciones, DonacionesWithoutID } from '../models/donaciones';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'donaciones';
 
 @Injectable({

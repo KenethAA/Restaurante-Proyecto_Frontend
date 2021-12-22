@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Colaboradores, ColaboradoresWithoutID } from '../models/colaboradores';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'colaboradores';
 
 @Injectable({

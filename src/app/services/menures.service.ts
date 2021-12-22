@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Menures, MenuresWithoutID } from '../models/menures';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'menus';
 
 @Injectable({

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Reservaciones, ReservacionesWithoutID } from '../models/reservaciones';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'reservaciones';
 
 @Injectable({

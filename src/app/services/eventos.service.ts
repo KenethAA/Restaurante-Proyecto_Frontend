@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Eventos, EventosWithoutID } from '../models/eventos';
 import { environment } from 'src/environments/environment';
 
-const API= environment.urlBackend;
+const API= environment.API;
 const ENDPOINT = 'eventos';
 
 @Injectable({
