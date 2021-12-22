@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { UserControllerService } from 'src/app/api/services';
+import { UserControllerService } from 'src/app/services/user-controller.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         if(token){
           localStorage.setItem('token', token);
           this.message.success('Bienvenido!')
-          this.route.navigate(['/welcome']);
+          this.route.navigate(['welcome']);
         }else{
           this.message.error('Error inesperado, contactese con su administrador de sistemas')
         }
