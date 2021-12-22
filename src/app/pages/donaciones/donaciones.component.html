@@ -1,7 +1,7 @@
 <button nz-button nzType="primary" (click)="open()">Ingresar un nuevo registro</button>
 
 
-<nz-table #basicTable [nzData]="listOfHardware">
+<nz-table #basicTable [nzData]="listOfDonaciones">
     <thead>
       <tr>
         <th>Fundacion</th>
@@ -50,7 +50,7 @@
             <nz-form-item>
               <nz-form-label>Fundacion</nz-form-label>
               <nz-form-control>
-              <input formControlName="fundacion" nz-input placeholder="Ingrese el dundador" />
+              <input formControlName="fundacion" nz-input placeholder="Ingrese el fundador" />
               </nz-form-control>
             </nz-form-item>
           </div>
